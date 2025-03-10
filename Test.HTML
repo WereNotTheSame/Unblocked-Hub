@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375px, initial-scale=1.0">
+<title>Unblocked Gaming</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { width: 375px; margin: 0 auto; }
+.hide-spin::-webkit-inner-spin-button { -webkit-appearance: none; }
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#6366f1',
+secondary: '#10b981'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-white">
+<nav class="fixed top-0 w-full bg-white border-b z-50 px-4 py-3">
+<div class="flex items-center justify-between">
+<div class="font-['Pacifico'] text-xl text-primary">logo</div>
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 flex items-center justify-center cursor-pointer">
+<i class="ri-notification-3-line"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center cursor-pointer">
+<i class="ri-user-line"></i>
+</div>
+</div>
+</div>
+<div class="mt-3 relative">
+<input type="text" placeholder="Search games..." class="w-full px-10 py-2 bg-gray-50 rounded-full text-sm">
+<i class="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+</div>
+</nav>
+<div class="mt-24 px-4">
+<div class="bg-primary bg-opacity-5 rounded-lg p-4 mb-6">
+<div class="flex items-center justify-between mb-4">
+<div>
+<div class="text-sm font-medium">VPN Status</div>
+<div class="text-xs text-gray-500">Connected - US Server</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input type="checkbox" class="sr-only peer" checked>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="relative mb-4">
+<button onclick="toggleServerList()" class="w-full flex items-center justify-between bg-white rounded-lg px-3 py-2 text-sm">
+<span class="flex items-center gap-2">
+<i class="ri-global-line"></i>
+<span id="selectedServer">US Server</span>
+</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div id="serverList" class="hidden absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-10">
+<div class="p-2">
+<div onclick="selectServer('US Server', '45ms')" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer">
+<div class="flex items-center gap-2">
+<i class="ri-global-line"></i>
+<span>US Server</span>
+</div>
+<span class="text-xs text-gray-500">45ms</span>
+</div>
+<div onclick="selectServer('JP Server', '85ms')" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer">
+<div class="flex items-center gap-2">
+<i class="ri-global-line"></i>
+<span>JP Server</span>
+</div>
+<span class="text-xs text-gray-500">85ms</span>
+</div>
+<div onclick="selectServer('UK Server', '120ms')" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer">
+<div class="flex items-center gap-2">
+<i class="ri-global-line"></i>
+<span>UK Server</span>
+</div>
+<span class="text-xs text-gray-500">120ms</span>
+</div>
+<div onclick="selectServer('SG Server', '65ms')" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer">
+<div class="flex items-center gap-2">
+<i class="ri-global-line"></i>
+<span>SG Server</span>
+</div>
+<span class="text-xs text-gray-500">65ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<div>
+<div class="text-gray-500">Speed</div>
+<div class="font-medium">12.5 MB/s</div>
+</div>
+<div>
+<div class="text-gray-500">Ping</div>
+<div class="font-medium">45ms</div>
+</div>
+<div>
+<div class="text-gray-500">Data Used</div>
+<div class="font-medium">1.2 GB</div>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="text-lg font-medium mb-3">Categories</div>
+<div class="grid grid-cols-4 gap-3">
+<div class="aspect-square rounded-lg bg-gray-50 p-2 cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/f1111c5d725c3b4c6f60a193ac466873.jpg" class="w-full h-full object-contain mb-1">
+<div class="text-xs text-center truncate">Action</div>
+</div>
+<div class="aspect-square rounded-lg bg-gray-50 p-2 cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/171a9a889393bc87b821376a970948c4.jpg" class="w-full h-full object-contain mb-1">
+<div class="text-xs text-center truncate">Racing</div>
+</div>
+<div class="aspect-square rounded-lg bg-gray-50 p-2 cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/2c64f9d7e58d11b0626d9a8d396b29e5.jpg" class="w-full h-full object-contain mb-1">
+<div class="text-xs text-center truncate">Puzzle</div>
+</div>
+<div class="aspect-square rounded-lg bg-gray-50 p-2 cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/9560d7d019f78aa3ee7a17a6ed5136af.jpg" class="w-full h-full object-contain mb-1">
+<div class="text-xs text-center truncate">Sports</div>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="text-lg font-medium mb-3">Featured Games</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="rounded-lg overflow-hidden shadow-sm cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/abedf3e0d04b19142a3c35bc41aedc57.jpg" class="w-full aspect-[4/3] object-cover">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">Speed Racer X</div>
+<div class="flex items-center gap-1 text-xs text-gray-500">
+<i class="ri-star-fill text-yellow-400"></i>
+<span>4.8</span>
+<span class="ml-2">Racing</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-sm cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/5e50295465221bb78871bf0e908b73c8.jpg" class="w-full aspect-[4/3] object-cover">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">Battle Arena</div>
+<div class="flex items-center gap-1 text-xs text-gray-500">
+<i class="ri-star-fill text-yellow-400"></i>
+<span>4.5</span>
+<span class="ml-2">Action</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-sm cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/e757fbb162764266ba1a4202b834ecb9.jpg" class="w-full aspect-[4/3] object-cover">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">Mind Puzzle</div>
+<div class="flex items-center gap-1 text-xs text-gray-500">
+<i class="ri-star-fill text-yellow-400"></i>
+<span>4.7</span>
+<span class="ml-2">Puzzle</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-sm cursor-pointer">
+<img src="https://public.readdy.ai/ai/img_res/9a8839eebf934826853f9f5d64f2d48a.jpg" class="w-full aspect-[4/3] object-cover">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">Pro Soccer</div>
+<div class="flex items-center gap-1 text-xs text-gray-500">
+<i class="ri-star-fill text-yellow-400"></i>
+<span>4.6</span>
+<span class="ml-2">Sports</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 w-full bg-white border-t">
+<div class="grid grid-cols-4 gap-1 p-2">
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-home-5-line"></i>
+</div>
+<div class="text-[10px]">Home</div>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-gamepad-line"></i>
+</div>
+<div class="text-[10px]">Games</div>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-shield-line"></i>
+</div>
+<div class="text-[10px]">VPN</div>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-line"></i>
+</div>
+<div class="text-[10px]">Profile</div>
+</div>
+</div>
+</div>
+<script>
+const mockData = {
+vpnStatus: {
+connected: true,
+server: 'US Server',
+speed: '12.5 MB/s',
+ping: '45ms',
+dataUsed: '1.2 GB',
+servers: [
+{ name: 'US Server', ping: '45ms' },
+{ name: 'JP Server', ping: '85ms' },
+{ name: 'UK Server', ping: '120ms' },
+{ name: 'SG Server', ping: '65ms' }
+]
+},
+categories: [
+{ name: 'Action', icon: 'gamepad' },
+{ name: 'Racing', icon: 'steering' },
+{ name: 'Puzzle', icon: 'puzzle' },
+{ name: 'Sports', icon: 'basketball' }
+],
+games: [
+{
+title: 'Speed Racer X',
+category: 'Racing',
+rating: 4.8,
+image: 'racing.jpg'
+},
+{
+title: 'Battle Arena',
+category: 'Action',
+rating: 4.5,
+image: 'battle.jpg'
+},
+{
+title: 'Mind Puzzle',
+category: 'Puzzle',
+rating: 4.7,
+image: 'puzzle.jpg'
+},
+{
+title: 'Pro Soccer',
+category: 'Sports',
+rating: 4.6,
+image: 'soccer.jpg'
+}
+]
+};
+const vpnToggle = document.querySelector('input[type="checkbox"]');
+vpnToggle.addEventListener('change', (e) => {
+const isConnected = e.target.checked;
+const statusText = document.querySelector('.text-xs.text-gray-500');
+const selectedServer = document.getElementById('selectedServer').textContent;
+statusText.textContent = isConnected ? `Connected - ${selectedServer}` : 'Disconnected';
+});
+
+function toggleServerList() {
+const serverList = document.getElementById('serverList');
+serverList.classList.toggle('hidden');
+}
+
+function selectServer(serverName, ping) {
+document.getElementById('selectedServer').textContent = serverName;
+const statusText = document.querySelector('.text-xs.text-gray-500');
+const isConnected = document.querySelector('input[type="checkbox"]').checked;
+if (isConnected) {
+statusText.textContent = `Connected - ${serverName}`;
+}
+document.querySelector('.text-gray-500:nth-child(2) + .font-medium').textContent = ping;
+toggleServerList();
+}
+
+document.addEventListener('click', (e) => {
+const serverList = document.getElementById('serverList');
+const serverButton = document.querySelector('button[onclick="toggleServerList()"]');
+if (!serverList.contains(e.target) && !serverButton.contains(e.target)) {
+serverList.classList.add('hidden');
+}
+});
+</script>
+</body>
+</html>
